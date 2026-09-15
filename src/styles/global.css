@@ -46,10 +46,16 @@ h2 { font-size: 25px; font-weight: 700; letter-spacing: .03em; }
 .featured-work:hover { box-shadow: 0 12px 40px #4034520c; }
 .work-image { overflow: hidden; background: #eae1f3; }
 .work-image img { width: 100%; height: 100%; aspect-ratio: 16 / 10; object-fit: cover; transition: transform .3s; }
+.work-image img[src="/rugby-club.jpg"] { object-position: center bottom; }
 .featured-work:hover img { transform: scale(1.025); }
 .work-copy { display: flex; flex-direction: column; align-items: start; justify-content: center; gap: var(--space-24); padding: var(--space-32); }
 .work-copy h3 { font-size: 23px; font-weight: 700; line-height: 1.6; }.work-copy > p:not(.eyebrow) { color: #776886; font-size: 14px; line-height: 1.9; }
 .work-action { display: flex; width: 100%; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color); padding-top: var(--space-24); font-size: 13px; color: var(--accent-color); }
+.listing-page .content-section { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 440px)); }
+.listing-page .featured-work, .home-page .featured-work { width: 100%; max-width: 440px; grid-template-columns: 1fr; grid-template-rows: 42% 58%; aspect-ratio: 1; }
+.listing-page .work-image img, .home-page .work-image img { aspect-ratio: auto; }
+.listing-page .work-copy, .home-page .work-copy { gap: var(--space-16); padding: var(--space-24); }
+.listing-page .work-action, .home-page .work-action { margin-top: auto; padding-top: var(--space-16); }
 .home-bottom, .about-columns { display: grid; grid-template-columns: 1fr; gap: var(--space-64); }
 .article-placeholder { display: grid; gap: var(--space-16); padding: var(--space-32); border: 1px dashed #cebae3; border-radius: 16px; font-size: 14px; }
 .muted { color: #776886; font-size: 13px; }
@@ -63,6 +69,9 @@ h2 { font-size: 25px; font-weight: 700; letter-spacing: .03em; }
 .timeline { list-style: none; padding: 0 0 0 var(--space-24); margin: 0; border-left: 1px solid #d5bfe9; display: grid; gap: var(--space-32); }.timeline li { position: relative; display: grid; gap: var(--space-8); }.timeline li::before { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: #a084bf; top: 6px; left: -29px; }.timeline time { font-size: 12px; font-weight: 800; color: var(--accent-color); }.timeline h3 { font-size: 15px; font-weight: 700; }.timeline p { color: #776886; font-size: 12px; line-height: 1.8; }
 .about-closing { display: flex; justify-content: space-between; align-items: center; gap: var(--space-24); border-top: 1px solid var(--border-color); padding-top: var(--space-32); }.about-closing p { font-size: 20px; }
 @media (max-width: 700px) {
+  .listing-page .content-section { grid-template-columns: minmax(0, 1fr); }
+  .listing-page .featured-work, .home-page .featured-work { aspect-ratio: auto; grid-template-rows: auto auto; }
+  .listing-page .work-image, .home-page .work-image { aspect-ratio: 16 / 9; }
   .header-inner { padding: var(--space-8) var(--space-16); gap: var(--space-8); flex-wrap: wrap; }.site-header nav { gap: var(--space-8); }.site-header nav a { font-size: 12px; padding-inline: var(--space-8); }.brand { font-size: 22px; }
   .page-shell { padding: var(--space-32) var(--space-24); gap: var(--space-48); }.home-hero { grid-template-columns: 1fr; gap: var(--space-32); padding-block: var(--space-16) var(--space-24); }.hero-art { width: 100%; max-width: 320px; justify-self: center; }.hero-copy h1 { font-size: 40px; }.intro { font-size: 14px; }.section-caption { display: none; }
   .featured-work, .home-bottom, .about-columns, .profile-panel { grid-template-columns: 1fr; }.home-bottom, .about-columns { gap: var(--space-48); }.work-copy { padding: var(--space-24); }.work-copy h3 { font-size: 21px; }.profile-panel { padding: var(--space-32) var(--space-24); gap: var(--space-32); }.profile-picture img { width: 160px; }.site-note { flex-wrap: wrap; gap: var(--space-8); }.site-note .small-label { margin-left: var(--space-16); }.about-closing { flex-direction: column; align-items: start; }
