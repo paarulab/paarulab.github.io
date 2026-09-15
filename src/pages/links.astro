@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import mutualLinks from '../data/links.json';
+const emptySlots = Math.max(0, 6 - mutualLinks.length);
+---
+<Layout title="Links — paaru">
+  <div class="page-shell listing-page">
+    <div class="page-title"><h1 class="english-heading">LINKS</h1></div>
+    <section class="content-section" aria-labelledby="mutual-links-title">
+      <h2 id="mutual-links-title">相互リンク</h2>
+      <div class="mutual-links-grid">
+        {mutualLinks.map(link => (
+          <a class="mutual-link-card" href={link.url} target="_blank" rel="noopener noreferrer">
+            <span>{link.name}</span><span aria-hidden="true">→</span>
+          </a>
+        ))}
+        {Array.from({ length: emptySlots }, () => (
+          <div class="mutual-link-card mutual-link-empty">
+            <span>募集中</span><span aria-hidden="true">→</span>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Layout>

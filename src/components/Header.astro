@@ -1,20 +1,18 @@
 ---
 const { pathname } = Astro.url;
-const isHome = pathname === "/" || pathname === "/index.html";
+const isHome = pathname === '/' || pathname === '/index.html';
+const currentPath = pathname.replace(/\/$/, '');
+const isAbout = currentPath === '/about';
 ---
-
-<header class="sticky top-0 z-50 bg-slate-50 border-b border-zinc-200">
-  <div class="max-w-5xl mx-auto px-6 py-6 flex items-center justify-between">
-    <a href="/" class="flex items-center gap-2 hover:opacity-70 transition-opacity">
-      <img src="/mitokon.png" alt="アイコン" class="w-10 h-10 rounded-full object-cover border border-zinc-200" />
-      <span class="font-semibold text-zinc-900 tracking-tight">paaru</span>
-    </a>
-    <nav class="flex items-center gap-6">
-      <a href="/" class={`text-sm font-medium text-[#5383c3] hover:opacity-70 hover:-translate-y-0.5 transition-all ${isHome ? 'border-b-2 border-[#5383c3]' : ''}`}>Top</a>
-      <a href="#works" class="text-sm font-medium text-[#5383c3] hover:opacity-70 hover:-translate-y-0.5 transition-all">Works</a>
-      <a href="#articles" class="text-sm font-medium text-[#5383c3] hover:opacity-70 hover:-translate-y-0.5 transition-all">Articles</a>
-      <a href="#links" class="text-sm font-medium text-[#5383c3] hover:opacity-70 hover:-translate-y-0.5 transition-all">Links</a>
-      <a href="/about" class={`text-sm font-medium text-[#5383c3] hover:opacity-70 hover:-translate-y-0.5 transition-all ${pathname === '/about' ? 'border-b-2 border-[#5383c3]' : ''}`}>About</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/" class="brand" aria-label="paaru ホーム"><img src="/mysite_icon.jpg" alt="" width="36" height="36" /><span>paaru</span></a>
+    <nav aria-label="メインナビゲーション">
+      <a href="/" aria-current={isHome ? 'page' : undefined}>Top</a>
+      <a href="/works" aria-current={['/works', '/projects'].includes(currentPath) ? 'page' : undefined}>Works</a>
+      <a href="/articles" aria-current={currentPath === '/articles' ? 'page' : undefined}>Articles</a>
+      <a href="/links" aria-current={currentPath === '/links' ? 'page' : undefined}>Links</a>
+      <a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a>
     </nav>
   </div>
 </header>

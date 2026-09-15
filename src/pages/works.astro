@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import projects from '../data/projects.json';
+---
+<Layout title="Works — paaru">
+  <div class="page-shell listing-page">
+    <div class="page-title"><h1 class="english-heading">WORKS</h1></div>
+    <div class="content-section">
+      {projects.map(project => (
+        <a class="featured-work" href={project.link} target="_blank" rel="noopener noreferrer">
+          <div class="work-image"><img src="/rugby-club.jpg" alt="電早ラグビー部の活動風景" /></div>
+          <div class="work-copy">
+            <p class="eyebrow">WEB DESIGN / DEVELOPMENT</p>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            {project.tech.length > 0 && <div class="interest-tags">{project.tech.map(tech => <span>{tech}</span>)}</div>}
+            <span class="work-action">サイトを見る <span aria-hidden="true">↗</span></span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</Layout>

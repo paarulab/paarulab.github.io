@@ -1,0 +1,23 @@
+---
+const articles = [
+  {
+    title: '自己紹介',
+    description: '初note、記事第1号',
+    url: 'https://note.com/grand_llama9104/n/nd34714114eed',
+    image: 'https://assets.st-note.com/production/uploads/images/285569756/rectangle_large_type_2_642dec55b98a50094309e3aa75db2854.jpeg?fit=bounds&quality=85&width=1280',
+  },
+];
+---
+<div class="content-section">
+  {articles.map(article => (
+    <a class="featured-work" href={article.url} target="_blank" rel="noopener noreferrer">
+      <div class="work-image"><img src={article.image} alt="" loading="lazy" /></div>
+      <div class="work-copy">
+        <p class="eyebrow">NOTE</p>
+        <h3>{article.title}</h3>
+        <p>{article.description}</p>
+        <span class="work-action">記事を読む <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+  ))}
+</div>
