@@ -6,8 +6,11 @@ const emptySlots = Math.max(0, 6 - mutualLinks.length);
 <Layout title="paaru - Links">
   <div class="page-shell listing-page">
     <div class="page-title"><h1 class="english-heading">LINKS</h1></div>
-    <section class="content-section" aria-labelledby="mutual-links-title">
-      <h2 id="mutual-links-title">相互リンク</h2>
+    <section class="content-section mutual-links-section" aria-labelledby="mutual-links-title">
+      <div class="mutual-links-intro">
+        <h2 id="mutual-links-title">相互リンク募集しています。</h2>
+        <a class="pill-link mutual-links-dm" href="https://x.com/akka882255" target="_blank" rel="noopener noreferrer">ご連絡はDMまで <span aria-hidden="true">→</span></a>
+      </div>
       <div class="mutual-links-grid">
         {mutualLinks.map(link => (
           <a class="mutual-link-card" href={link.url} target="_blank" rel="noopener noreferrer">
@@ -16,7 +19,7 @@ const emptySlots = Math.max(0, 6 - mutualLinks.length);
         ))}
         {Array.from({ length: emptySlots }, () => (
           <div class="mutual-link-card mutual-link-empty">
-            <span>募集中</span><span aria-hidden="true">→</span>
+            <span>募集中</span>
           </div>
         ))}
       </div>

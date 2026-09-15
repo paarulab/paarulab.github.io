@@ -1,4 +1,9 @@
 ---
+interface Props {
+  headingLevel?: 2 | 3;
+}
+
+const { headingLevel = 3 } = Astro.props;
 const articles = [
   {
     title: '自己紹介',
@@ -14,7 +19,7 @@ const articles = [
       <div class="work-image"><img src={article.image} alt="" loading="lazy" /></div>
       <div class="work-copy">
         <p class="eyebrow">NOTE</p>
-        <h3>{article.title}</h3>
+        {headingLevel === 2 ? <h2>{article.title}</h2> : <h3>{article.title}</h3>}
         <p>{article.description}</p>
         <span class="work-action">記事を読む <span aria-hidden="true">↗</span></span>
       </div>
