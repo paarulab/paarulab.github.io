@@ -14,7 +14,7 @@ const {
   description = 'paaru（ぱーる）の個人サイト。電気通信大学で情報系を学びながら、制作物や記事、日々の記録を公開しています。',
 } = Astro.props;
 const pageUrl = new URL(Astro.url.pathname, Astro.site);
-const imageUrl = new URL('/ogp.png', Astro.site);
+const imageUrl = new URL('/ogp.png?v=pale-moonlight', Astro.site);
 const imageAlt = 'paaru — 制作物や記事を紹介する個人サイト';
 ---
 <!doctype html>
