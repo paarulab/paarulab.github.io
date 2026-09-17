@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import mutualLinks from '../data/links.json';
-const emptySlots = Math.max(0, 6 - mutualLinks.length);
 ---
 <Layout title="paaru - Links" description="相互リンク - 募集中です！">
   <div class="page-shell listing-page">
@@ -14,13 +13,12 @@ const emptySlots = Math.max(0, 6 - mutualLinks.length);
       <div class="mutual-links-grid">
         {mutualLinks.map(link => (
           <a class="mutual-link-card" href={link.url} target="_blank" rel="noopener noreferrer">
-            <span>{link.name}</span><span aria-hidden="true">→</span>
+            <span class="mutual-link-person">
+              <img src={link.icon} alt="" width="56" height="56" loading="lazy" decoding="async" />
+              <span>{link.name}</span>
+            </span>
+            <span aria-hidden="true">→</span>
           </a>
-        ))}
-        {Array.from({ length: emptySlots }, () => (
-          <div class="mutual-link-card mutual-link-empty">
-            <span>募集中</span>
-          </div>
         ))}
       </div>
     </section>

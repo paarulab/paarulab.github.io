@@ -364,9 +364,9 @@ h1.english-heading { font-size: clamp(36px, 5vw, 48px); }
 .mutual-links-intro h2 { font-size: 15px; font-weight: 500; color: var(--color-muted); }
 .mutual-links-dm { color: var(--accent-color); font-weight: 700; }
 .mutual-link-card { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 96px; padding: 24px 28px; border: 1px solid var(--border-color); border-radius: 14px; background: #fdfaff99; color: var(--accent-color); font-size: 16px; font-weight: 700; transition: border-color .2s, transform .2s; }
-.mutual-link-card > span:first-child { overflow-wrap: anywhere; }
+.mutual-link-person { display: flex; align-items: center; gap: 16px; min-width: 0; overflow-wrap: anywhere; }
+.mutual-link-person img { width: 56px; height: 56px; flex: 0 0 56px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 4px 14px #60477c24; }
 a.mutual-link-card:hover { border-color: var(--accent-color); transform: translateY(-2px); }
-.mutual-link-empty { border-style: dashed; background: #fdfaff33; color: var(--color-muted); font-weight: 500; }
 @media (max-width: 600px) { .mutual-links-grid { grid-template-columns: 1fr; gap: 16px; } }
 
 /* Center each profile image in a circular crop. */

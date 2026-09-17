@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "name": "トラマト",
+    "url": "https://toramutton.me/",
+    "icon": "/toramutton.jpg"
+  },
+  {
+    "name": "しおり🔖",
+    "url": "https://shiori-02-14.github.io/Homepage/index.html",
+    "icon": "/shiori.jpg"
+  }
+]
